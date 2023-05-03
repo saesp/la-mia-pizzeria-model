@@ -1,8 +1,7 @@
-﻿
-@{
+﻿@*@{
     ViewData["Title"] = "Home Pagee";
     //<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-}
+}*@
 
 @model List<Pizza>;
 
@@ -18,10 +17,8 @@
                     <h3 class="text-center">@pizza.Name</h3>
                     <div class="card-body">
                         <img src="@pizza.Image" width="100%" />
-                        <div class="card-text">
-                            <p>@pizza.Description</p>
-                        </div>
-                        <div class="btn-dark">@pizza.Price</div>
+                        <div class="text-danger">@pizza.Price €</div>
+                        <a href="@Url.Action("Details", "Pizza", new {id= pizza.Id})"><button>Visualizza</button></a>
                     </div>
                 </div>
             </li>
