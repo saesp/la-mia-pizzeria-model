@@ -1,4 +1,5 @@
 ﻿@model Pizza;
+@*Model == Pizza*@
 
 <div class="container">
     <h1 class="display-4 mb-4">Details</h1>
@@ -7,11 +8,13 @@
             <div class="card">
                 <h2 class="text-center">@Model.Name</h2>
                 <div class="card-body">
-                    <img src="@Model.Image" width="80%" />
+                    <div class="text-center">
+                        <img class="" src="@Model.Image" width="60%" />
+                    </div>
                     <div class="card-text">
                         <p>@Model.Description</p>
+                        <div class="text-danger">@Model.Price €</div>
                     </div>
-                    <div class="text-danger">@Model.Price €</div>
                 </div>
             </div>
         </div>

@@ -8,21 +8,28 @@
 
 <div class="container">
     <h1 class="display-4 mb-4">Pizzas</h1>
-
+    
+    @if(Model != null)
+    {
         <ul class="row list-unstyled">
-        @foreach (Pizza pizza in Model)
-        {
-            <li class="col-4">
-                <div class="card">
-                    <h3 class="text-center">@pizza.Name</h3>
-                    <div class="card-body">
-                        <img src="@pizza.Image" width="100%" />
-                        <div class="text-danger">@pizza.Price €</div>
-                        <a href="@Url.Action("Details", "Pizza", new {id= pizza.Id})"><button>Visualizza</button></a>
+            @foreach (Pizza pizza in Model)
+            {
+                <li class="col-4">
+                    <div class="card">
+                        <h3 class="text-center">@pizza.Name</h3>
+                        <div class="card-body">
+                            <img src="@pizza.Image" width="100%" />
+                            <div class="text-danger">@pizza.Price €</div>
+                            <a href="@Url.Action("Details", "Pizza", new {id= pizza.Id})"><button class="p-2 border-0 bg-dark text-white">Visualizza</button></a>
+                        </div>
                     </div>
-                </div>
-            </li>
-        }
+                </li>
+            }
         </ul>
+    }
+    else
+    {
+       <div>Lista non trovata.</div>
+    }
 
 </div>
