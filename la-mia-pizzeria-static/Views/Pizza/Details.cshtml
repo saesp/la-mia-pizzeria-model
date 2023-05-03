@@ -2,22 +2,15 @@
 @*Model == Pizza*@
 
 <div class="container">
-    <h1 class="display-4 mb-4">Details</h1>
 
-        <div class="list-unstyled">
-            <div class="card">
-                <h2 class="text-center">@Model.Name</h2>
-                <div class="card-body">
-                    <div class="text-center">
-                        <img class="" src="@Model.Image" width="60%" />
-                    </div>
-                    <div class="card-text">
-                        <p>@Model.Description</p>
-                        <div class="text-danger">@Model.Price €</div>
-                    </div>
-                </div>
-            </div>
+     <div class="d-flex gap-4">
+        <div class="">
+            <h1 class="display-4 mb-4">Pizza @Model.Name</h1>
+            <p>@Model.Description</p>
+            <div class="text-danger"><b>Prezzo:</b> @Model.Price €</div>
         </div>
+        <img class="" src="@Model.Image" width="50%" />
+     </div>
 
 </div>
 
